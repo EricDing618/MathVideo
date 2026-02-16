@@ -22,4 +22,11 @@ class TransformExample(Scene):
         self.play(Write(tex), run_time=1)
 
         self.wait()
+        parts = VGroup(
+            Text("测试数学公式:", font_size=30, color=BLUE),
+            Tex(r"$\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$", font_size=30, color=YELLOW),
+            Text("正确吗？", font_size=30, color=RED)
+        )
+        parts.arrange(RIGHT, buff=MED_SMALL_BUFF)   # 横向等间距排列
+        self.play(Write(parts))
 
